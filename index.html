@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validly</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .links {
+            display: flex;
+            gap: 20px;
+        }
+        a {
+            text-decoration: none;
+        }
+        .popover {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        .popover-container {
+            position: relative;
+            display: inline-block;
+        }
+        .popover-container:hover .popover {
+            visibility: visible;
+            opacity: 1;
+        }
+        .disabled-link {
+            color: #888;
+            pointer-events: none;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #f8f9fa;
+            }
+            a {
+                color: #bbb;
+            }
+            a:hover {
+                color: #fff;
+            }
+            .popover {
+                background: rgba(255, 255, 255, 0.8);
+                color: black;
+            }
+            .disabled-link {
+                color: #555;
+            }
+        }
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #ffffff;
+                color: #121212;
+            }
+            a {
+                color: #333;
+            }
+            a:hover {
+                color: #000;
+            }
+            .popover {
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+            }
+            .disabled-link {
+                color: #aaa;
+            }
+        }
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Validly</h1>
+        <div class="links">
+            <a href="./decks/code-modernization.pdf" target="_blank">Modern-day Code Modernization</a>
+            <div class="popover-container">
+                <a class="disabled-link" href="#">Self-healing Documentation</a>
+                <div class="popover">Coming soon</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
